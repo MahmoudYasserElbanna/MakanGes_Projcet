@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/constants.dart';
-
-import 'package:makanges_app/core/utils/assets.dart';
-import 'package:makanges_app/core/utils/styles.dart';
-import 'package:makanges_app/core/widgets/custom_icon_button.dart';
-import 'package:makanges_app/core/widgets/custom_vertical_divider.dart';
+import 'package:makanges_app/features/home/presentation/view/widgets/home_view_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,56 +7,9 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        title: Row(
-          children: [
-            CircleAvatar(
-              radius: 21,
-              child: Image.asset(Assets.personalImage),
-            ),
-            const SizedBox(width: 4),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Deliver To',
-                  style: Styles.textStyle12.copyWith(
-                      color: const Color(0xFF333333).withOpacity(0.7)),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.location_on_outlined,
-                      color: kPrimaryColor,
-                    ),
-                    const Text(
-                      'My Home',
-                      style: Styles.textStyle12,
-                    ),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                    ),
-                  ],
-                ),
-              ],
-            )
-          ],
-        ),
-        actions: [
-          const CustomVerticalDivider(),
-          CustomIconButton(
-            icon: Icons.shopping_cart_outlined,
-            onPressed: () {},
-          ),
-          const CustomVerticalDivider(),
-          CustomIconButton(
-            icon: Icons.notifications_none,
-            onPressed: () {},
-          ),
-        ],
+      appBar: buildHomeViewAppBar(),
+      body: const Column(
+        children: [],
       ),
     );
   }
