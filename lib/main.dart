@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/features/splash/presentation/view/splash_view.dart';
 
 void main() {
   runApp(const MakanGesApp());
@@ -10,11 +11,9 @@ class MakanGesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'MakanGes App',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('MakanGes App'),
-        ),
+        body: SplashView(),
       ),
     );
   }
