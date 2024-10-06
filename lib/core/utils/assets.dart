@@ -1,5 +1,3 @@
-import 'dart:html';
-
 abstract class Assets {
   static const String logo = 'assets/images/SplashViewIcon.svg';
   static const String burgerIcon = 'assets/images/Burger_Icon.svg';
