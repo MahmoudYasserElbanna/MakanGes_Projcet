@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/features/splash/presentation/view/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
@@ -6,8 +7,9 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SplashViewBody(),
+    return Scaffold(
+      backgroundColor: kPrimaryColor,
+      body: const SplashViewBody(),
     );
   }
 }

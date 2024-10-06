@@ -42,4 +42,10 @@ abstract class Styles {
     color: Color(0xff333333),
     fontWeight: FontWeight.w600,
   );
+
+  static const TextStyle textStyle24 = TextStyle(
+    fontSize: 24,
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+  );
 }

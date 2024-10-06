@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/core/utils/styles.dart';
 
 class SlidingAnimationBuilder extends StatelessWidget {
   const SlidingAnimationBuilder({
@@ -18,10 +19,7 @@ class SlidingAnimationBuilder extends StatelessWidget {
           child: const Text(
             textAlign: TextAlign.center,
             'Delivered To You',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
+            style: Styles.textStyle24,
           ),
         );
       },

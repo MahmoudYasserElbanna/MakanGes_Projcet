@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/features/splash/presentation/view/splash_view.dart';
+import 'package:makanges_app/core/utils/app_router.dart';
 
 void main() {
   runApp(const MakanGesApp());
@@ -10,11 +10,9 @@ class MakanGesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouters.router,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SplashView(),
-      ),
     );
   }
 }

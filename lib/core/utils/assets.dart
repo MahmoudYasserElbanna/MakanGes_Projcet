@@ -1,5 +1,5 @@
 abstract class Assets {
-  static const String logo = 'assets/images/SplashViewIcon.svg';
+  static const String logo = 'assets/images/SplashViewIcon.png';
   static const String burgerIcon = 'assets/images/Burger_Icon.svg';
   static const String drinksIcon = 'assets/images/Drink_Icon.svg';
   static const String meatIcon = 'assets/images/Meat_Icon.svg';
