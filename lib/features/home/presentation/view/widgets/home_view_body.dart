@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/custom_coupon_offer_card.dart';
@@ -41,9 +40,7 @@ class HomeViewBody extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Center(
-                      child: SvgPicture.asset(
-                        Assets.sushiIcon,
-                      ),
+                      child: Image.asset(Assets.drinksIcon),
                     ),
                   ),
                 ),
