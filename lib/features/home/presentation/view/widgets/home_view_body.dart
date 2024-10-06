@@ -3,6 +3,8 @@ import 'package:makanges_app/constants.dart';
 
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
+import 'package:makanges_app/core/widgets/custom_icon_button.dart';
+import 'package:makanges_app/core/widgets/custom_vertical_divider.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -49,29 +51,15 @@ class HomeViewBody extends StatelessWidget {
           ],
         ),
         actions: [
-          VerticalDivider(
-            color: const Color(0xFF333333).withOpacity(0.3),
-            endIndent: 16,
-            indent: 16,
+          const CustomVerticalDivider(),
+          CustomIconButton(
+            icon: Icons.shopping_cart_outlined,
+            onPressed: () {},
           ),
-          IconButton(
-            icon: const Icon(Icons.shopping_cart_outlined),
-            color: Colors.black,
-            onPressed: () {
-              // Add functionality for cart button
-            },
-          ),
-          VerticalDivider(
-            color: const Color(0xFF333333).withOpacity(0.3),
-            endIndent: 16,
-            indent: 16,
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications_none),
-            color: Colors.black,
-            onPressed: () {
-              // Add functionality for notifications button
-            },
+          const CustomVerticalDivider(),
+          CustomIconButton(
+            icon: Icons.notifications_none,
+            onPressed: () {},
           ),
         ],
       ),
