@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/utils/assets.dart';
@@ -34,7 +35,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(Assets.logo),
+        SvgPicture.asset(Assets.logo),
         const SizedBox(height: 4),
         SlidingAnimationBuilder(slidingAnimation: slidingAnimation),
       ],
