@@ -10,4 +10,5 @@ abstract class Assets {
   static const String tacoIcon = 'assets/images/Taco_Icon.svg';
   static const String pizzaImage = 'assets/images/Pizza_Image.svg';
   static const String burgerImage = 'assets/images/burger_Image.svg';
+  static const String personalImage = 'assets/images/Personal_Image.png';
 }
