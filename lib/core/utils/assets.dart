@@ -9,6 +9,7 @@ abstract class Assets {
   static const String sushiIcon = 'assets/images/Sushi_Icon.png';
   static const String tacoIcon = 'assets/images/Taco_Icon.png';
   static const String pizzaImage = 'assets/images/Pizza_Image.png';
-  static const String burgerImage = 'assets/images/burger_Image.png';
+  static const String burgerImage = 'assets/images/Burger_Image.png';
   static const String personalImage = 'assets/images/Personal_Image.png';
+  static const String comboPizzaImage = 'assets/images/Pizza_Image2.png';
 }

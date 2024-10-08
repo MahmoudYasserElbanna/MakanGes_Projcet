@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/custom_coupon_offer_card.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/custom_grid_view.dart';
+import 'package:makanges_app/features/home/presentation/view/widgets/food_card_list.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/home_view_app_bar.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/custom_search_bar.dart';
 
@@ -21,7 +22,6 @@ class HomeViewBody extends StatelessWidget {
             CustomCouponOfferCard(),
             SizedBox(height: 24),
             CustomGridView(),
-            SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,7 +35,8 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            Expanded(child: FoodCardList()),
+            SizedBox(height: 24),
           ],
         ),
       ),
