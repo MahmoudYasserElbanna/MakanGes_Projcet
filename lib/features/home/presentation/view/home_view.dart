@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/core/widgets/navigation_bar.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,6 +9,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: HomeViewBody(),
+      bottomNavigationBar: CustomNavigationBar(),
     );
   }
 }
