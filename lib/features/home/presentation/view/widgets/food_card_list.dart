@@ -40,24 +40,26 @@ class FoodCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: foodItems.length,
-      itemBuilder: (context, index) {
-        final foodItem = foodItems[index];
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: FoodCardItem(
-            imageUrl: foodItem['image'],
-            discount: foodItem['discount'],
-            distance: foodItem['distance'],
-            time: foodItem['time'],
-            title: foodItem['title'],
-            rating: foodItem['rating'],
-            reviewCount: foodItem['reviewCount'],
-          ),
-        );
-      },
+    return Expanded(
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: foodItems.length,
+        itemBuilder: (context, index) {
+          final foodItem = foodItems[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: FoodCardItem(
+              imageUrl: foodItem['image'],
+              discount: foodItem['discount'],
+              distance: foodItem['distance'],
+              time: foodItem['time'],
+              title: foodItem['title'],
+              rating: foodItem['rating'],
+              reviewCount: foodItem['reviewCount'],
+            ),
+          );
+        },
+      ),
     );
   }
 }

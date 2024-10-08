@@ -22,6 +22,7 @@ class HomeViewBody extends StatelessWidget {
             CustomCouponOfferCard(),
             SizedBox(height: 24),
             CustomGridView(),
+            SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,8 +36,9 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(child: FoodCardList()),
-            SizedBox(height: 24),
+            SizedBox(height: 16),
+            FoodCardList(),
+            SizedBox(height: 16),
           ],
         ),
       ),

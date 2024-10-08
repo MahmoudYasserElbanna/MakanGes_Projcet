@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/core/utils/styles.dart';
+import 'package:makanges_app/features/home/presentation/view/widgets/discount_card.dart';
+import 'list_view_order_info.dart';
 
 class FoodCardItem extends StatelessWidget {
   final String imageUrl;
@@ -43,30 +44,12 @@ class FoodCardItem extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('$distance + $time',
-                        style: const TextStyle(color: Colors.grey)),
-                    const SizedBox(height: 4),
-                    Text(title, style: Styles.textStyle16),
-                    Row(
-                      children: [
-                        const Icon(Icons.star, color: Colors.amber, size: 20),
-                        const SizedBox(width: 4),
-                        Text(
-                          '$rating',
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(width: 4),
-                        Text('- $reviewCount',
-                            style: const TextStyle(color: Colors.grey)),
-                      ],
-                    ),
-                  ],
-                ),
+              OrderInfo(
+                distance: distance,
+                time: time,
+                title: title,
+                rating: rating,
+                reviewCount: reviewCount,
               ),
             ],
           ),
@@ -74,17 +57,7 @@ class FoodCardItem extends StatelessWidget {
             Positioned(
               top: 8,
               left: 8,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  discount!,
-                  style: Styles.textStyle12,
-                ),
-              ),
+              child: DiscountCard(discount: discount),
             ),
         ],
       ),
