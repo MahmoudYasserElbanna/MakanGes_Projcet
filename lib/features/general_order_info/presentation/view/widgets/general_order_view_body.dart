@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:makanges_app/core/utils/assets.dart';
-import 'package:makanges_app/core/widgets/cusotm_icon_button.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/general_order_view_header_icons.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/order_name.dart';
+
+import 'order_location.dart';
 
 class GeneralOrderViewBody extends StatelessWidget {
   const GeneralOrderViewBody({super.key});
@@ -14,7 +18,21 @@ class GeneralOrderViewBody extends StatelessWidget {
           width: double.infinity,
           fit: BoxFit.cover,
         ),
-        CustomIconButton(icon: Icons.chevron_left, onPressed: () {})
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 48),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const GeneralOrderViewHeaderIcons(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+              const OrderName(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              const OrderLocation(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              Row(),
+            ],
+          ),
+        ),
       ],
     );
   }

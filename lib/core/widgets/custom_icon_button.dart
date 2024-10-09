@@ -11,7 +11,7 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 48),
+      padding: const EdgeInsets.only(left: 8.0),
       child: Container(
         width: 32,
         height: 32,
@@ -21,11 +21,7 @@ class CustomIconButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        child: IconButton(
-          alignment: Alignment.center,
-          icon: Icon(icon),
-          onPressed: onPressed,
-        ),
+        child: GestureDetector(onTap: onPressed, child: Icon(icon)),
       ),
     );
   }
