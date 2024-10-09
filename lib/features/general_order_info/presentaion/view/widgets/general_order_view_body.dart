@@ -5,6 +5,15 @@ class GeneralOrderViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/images/general_order.png',
+          fit: BoxFit.cover,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+        ),
+      ],
+    );
   }
 }

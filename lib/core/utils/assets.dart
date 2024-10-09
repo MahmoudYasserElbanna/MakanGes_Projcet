@@ -12,4 +12,10 @@ abstract class Assets {
   static const String burgerImage = 'assets/images/Burger_Image.png';
   static const String personalImage = 'assets/images/Personal_Image.png';
   static const String comboPizzaImage = 'assets/images/Pizza_Image2.png';
+  static const String burgerImage1 = 'assets/images/Burger_Image1.png';
+  static const String burgerImage2 = 'assets/images/Burger_Image2.png';
+  static const String burgerImage3 = 'assets/images/Burger_Image3.png';
+  static const String burgerImage4 = 'assets/images/Burger_Image4.png';
+  static const String burgerImage5 = 'assets/images/Burger_Image5.png';
+  static const String burgerImage6 = 'assets/images/Burger_Image6.png';
 }
