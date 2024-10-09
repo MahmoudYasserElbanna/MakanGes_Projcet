@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/core/widgets/custom_icon_button_with_title.dart';
+import 'package:makanges_app/core/widgets/custom_icon_design.dart';
 import 'package:makanges_app/core/widgets/custom_vertical_divider.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -18,13 +18,13 @@ class CustomSearchBar extends StatelessWidget {
         ),
         elevation: MaterialStateProperty.all(1),
         hintText: 'Search food, drink, etc..',
-        leading: CustomIconButton(
+        leading: CustomIconDesign(
           icon: Icons.search_outlined,
           onPressed: () {},
         ),
         trailing: [
           const CustomVerticalDivider(),
-          CustomIconButton(
+          CustomIconDesign(
             icon: Icons.bookmark_outline_sharp,
             onPressed: () {},
           ),
