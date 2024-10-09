@@ -22,6 +22,7 @@ class CustomIconButton extends StatelessWidget {
           ),
         ),
         child: IconButton(
+          alignment: Alignment.center,
           icon: Icon(icon),
           onPressed: onPressed,
         ),
