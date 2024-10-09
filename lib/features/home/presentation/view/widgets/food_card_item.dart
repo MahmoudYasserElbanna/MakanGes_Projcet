@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/features/general_order_info/presentaion/view/general_order_view.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/discount_card.dart';
 import 'list_view_order_info.dart';
 
@@ -24,42 +25,52 @@ class FoodCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Stack(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(16)),
-                child: Image.asset(
-                  imageUrl,
-                  height: 125,
-                  width: 250,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              OrderInfo(
-                distance: distance,
-                time: time,
-                title: title,
-                rating: rating,
-                reviewCount: reviewCount,
-              ),
-            ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GeneralOrderView(),
           ),
-          if (discount != null)
-            Positioned(
-              top: 8,
-              left: 8,
-              child: DiscountCard(discount: discount),
+        );
+      },
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(16)),
+                  child: Image.asset(
+                    imageUrl,
+                    height: 125,
+                    width: 250,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                OrderInfo(
+                  distance: distance,
+                  time: time,
+                  title: title,
+                  rating: rating,
+                  reviewCount: reviewCount,
+                ),
+              ],
             ),
-        ],
+            if (discount != null)
+              Positioned(
+                top: 8,
+                left: 8,
+                child: DiscountCard(discount: discount),
+              ),
+          ],
+        ),
       ),
     );
   }
