@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 
-class CouponSection extends StatelessWidget {
-  const CouponSection({
+class OrderCoupon extends StatelessWidget {
+  const OrderCoupon({
     super.key,
   });
 

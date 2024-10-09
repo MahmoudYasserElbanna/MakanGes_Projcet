@@ -12,19 +12,20 @@ class OrderCard extends StatelessWidget {
   final Widget icon;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8, right: 16),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 8),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: const Color(0xFF22A641).withOpacity(0.3),
-        ),
-        child: OrderInfoCard(
-          title: title,
-          valueOf: valueOf,
-          icon: icon,
-        ),
+    return Container(
+      margin: EdgeInsets.only(
+        top: MediaQuery.of(context).size.height * 0.01,
+        right: MediaQuery.of(context).size.width * 0.048,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: const Color(0xFF22A641).withOpacity(0.3),
+      ),
+      child: OrderInfoCard(
+        title: title,
+        valueOf: valueOf,
+        icon: icon,
       ),
     );
   }
