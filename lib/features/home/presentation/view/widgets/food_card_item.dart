@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/features/general_order_info/presentaion/view/general_order_view.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/discount_card.dart';
-import 'list_view_order_info.dart';
+import 'order_info_list_view.dart';
 
 class FoodCardItem extends StatelessWidget {
   final String imageUrl;
