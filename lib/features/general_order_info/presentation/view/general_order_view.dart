@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/features/general_order_info/presentaion/view/widgets/general_order_view_body.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/general_order_view_body.dart';
 
 class GeneralOrderView extends StatelessWidget {
   const GeneralOrderView({super.key});
