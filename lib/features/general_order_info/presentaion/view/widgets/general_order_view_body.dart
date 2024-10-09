@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/assets.dart';
-import 'package:makanges_app/core/widgets/custom_icon_button.dart';
+import 'package:makanges_app/core/widgets/cusotm_icon_button.dart';
 
 class GeneralOrderViewBody extends StatelessWidget {
   const GeneralOrderViewBody({super.key});

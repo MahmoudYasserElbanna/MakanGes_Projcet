@@ -22,8 +22,8 @@ class CustomIconButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        child: CustomIconDesign(
-          icon: icon,
+        child: IconButton(
+          icon: Icon(icon),
           onPressed: onPressed,
         ),
       ),
