@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/general_order_view_header_icons.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/order_general_info.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/order_name.dart';
-
 import 'order_location.dart';
 
 class GeneralOrderViewBody extends StatelessWidget {
@@ -29,7 +28,7 @@ class GeneralOrderViewBody extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               const OrderLocation(),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              Row(),
+              const OrderGeneralInfo()
             ],
           ),
         ),
