@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/core/widgets/custom_icon_button.dart';
+import 'package:makanges_app/core/widgets/custom_icon_button_with_title.dart';
 import 'package:makanges_app/core/widgets/custom_vertical_divider.dart';
 
 class CustomSearchBar extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
-import 'package:makanges_app/core/widgets/custom_icon_button.dart';
+import 'package:makanges_app/core/widgets/custom_icon_button_with_title.dart';
 import 'package:makanges_app/core/widgets/custom_vertical_divider.dart';
 
 AppBar buildHomeViewAppBar() {
