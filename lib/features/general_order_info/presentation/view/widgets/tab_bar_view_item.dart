@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/core/utils/styles.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/tab_bar_image_decoration.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/tab_bar_item_body.dart';
 
 class TabBarViewItem extends StatelessWidget {
   final String image;
@@ -25,43 +26,11 @@ class TabBarViewItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(8),
-              topRight: Radius.circular(8),
-            ),
-            child: Image.asset(
-              image,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
+          ItemImageDecoration(image: image),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      title,
-                      style: Styles.textStyle16,
-                    ),
-                    Text(
-                      price,
-                      style: Styles.textGreenStyle16,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  description,
-                  style: Styles.textStyle12,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
+            child:
+                ItemBody(title: title, price: price, description: description),
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/features/general_order_info/presentation/view/widgets/order_info_card.dart';
+import 'package:makanges_app/features/general_order_info/presentation/view/widgets/order_general_info_card.dart';
 
 class OrderCard extends StatelessWidget {
   const OrderCard({
@@ -22,7 +22,7 @@ class OrderCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         color: const Color(0xFF22A641).withOpacity(0.3),
       ),
-      child: OrderInfoCard(
+      child: OrderGeneralInfoCard(
         title: title,
         valueOf: valueOf,
         icon: icon,

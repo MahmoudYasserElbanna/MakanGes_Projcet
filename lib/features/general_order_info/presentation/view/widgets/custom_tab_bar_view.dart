@@ -3,8 +3,8 @@ import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/build_tab_bar_view.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/tab_bar_view_item.dart';
 
-class CustomTabBarView extends StatelessWidget {
-  const CustomTabBarView({
+class CustomTabBarViewBody extends StatelessWidget {
+  const CustomTabBarViewBody({
     super.key,
   });
 

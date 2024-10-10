@@ -37,7 +37,7 @@ class GeneralOrderViewBody extends StatelessWidget {
                 const OrderCoupon(),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 const CustomTabBar(),
-                const CustomTabBarView(),
+                const CustomTabBarViewBody(),
               ],
             ),
           ),

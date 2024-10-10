@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 
-class OrderInfoCard extends StatelessWidget {
-  const OrderInfoCard({
+class OrderGeneralInfoCard extends StatelessWidget {
+  const OrderGeneralInfoCard({
     super.key,
     required this.title,
     required this.valueOf,
