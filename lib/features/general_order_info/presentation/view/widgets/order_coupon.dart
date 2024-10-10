@@ -12,7 +12,7 @@ class OrderCoupon extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Use This Coupon for free cheese!',
+        Text('Use Coupon for free cheese!',
             style: Styles.textGreenStyle16.copyWith(fontSize: 14)),
         const CustomElevatedButton(label: 'Claim Now')
       ],
