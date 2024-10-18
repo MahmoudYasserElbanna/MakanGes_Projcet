@@ -49,7 +49,8 @@ class CartItem extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     description,
-                    style: Styles.textStyle16,
+                    style: Styles.textStyle16
+                        .copyWith(color: Colors.black.withOpacity(0.6)),
                   )
                 ],
               ),

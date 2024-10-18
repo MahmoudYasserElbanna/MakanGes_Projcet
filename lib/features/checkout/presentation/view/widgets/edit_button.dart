@@ -8,13 +8,6 @@ class EditButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        VerticalDivider(
-          width: 12,
-          indent: 12,
-          endIndent: 12,
-          color: Color(0xFF19A83E),
-          thickness: 2,
-        ),
         Icon(
           Icons.edit_note_rounded,
           color: Color(0xFF19A83E),
