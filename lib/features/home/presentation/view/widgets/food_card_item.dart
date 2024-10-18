@@ -28,7 +28,7 @@ class FoodCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouters.generalOrderInfo);
+        GoRouter.of(context).push(AppRouters.generalOrderInfoViewRoute);
       },
       child: Card(
         elevation: 4,
