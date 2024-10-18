@@ -3,12 +3,25 @@ import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/general_order_view_header_icons.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/tab_bar_item_content_info.dart';
-import 'package:makanges_app/features/order_in_details/presentation/view/widget/additions_to_the_order_item.dart';
+import 'package:makanges_app/features/order_in_details/presentation/view/widget/addition_to_the_order_list_view.dart';
 import 'package:makanges_app/features/order_in_details/presentation/view/widget/quantity_order.dart';
 
 class OrderInDetailsViewBody extends StatelessWidget {
   const OrderInDetailsViewBody({super.key});
-
+  final List<Map<String, dynamic>> additions = const [
+    {'title': 'Extra Cheese', 'isFree': false},
+    {'title': 'Extra Fries', 'isFree': false},
+    {'title': 'No Tomato', 'isFree': true},
+    {'title': 'No Onion', 'isFree': true},
+    {'title': 'No Onion', 'isFree': true},
+    {'title': 'Bacon', 'isFree': false},
+    {'title': 'Pickles', 'isFree': true},
+    {'title': 'Lettuce Wrap', 'isFree': true},
+    {'title': 'Avocado', 'isFree': false},
+    {'title': 'Gluten-Free Bun', 'isFree': false},
+    {'title': 'Extra Patty', 'isFree': false},
+    // Add more items as needed
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,19 +53,16 @@ class OrderInDetailsViewBody extends StatelessWidget {
                   'Customize my order',
                   style: Styles.textStyle20,
                 ),
-                const AdditionsToTheOrderItem(
-                  isFree: false,
-                  title: 'Extra Cheese Burger',
-                ),
+                AdditionsToTheOrderListView(additions: additions),
               ],
             ),
           ),
           const Positioned(
-            bottom: 0,
-            right: 0,
             left: 0,
+            right: 0,
+            bottom: 0,
             child: QuantityOrder(),
-          ),
+          )
         ],
       ),
     );
