@@ -29,8 +29,11 @@ class TabBarViewItem extends StatelessWidget {
           ItemImageDecoration(image: image),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child:
-                ItemBody(title: title, price: price, description: description),
+            child: ItemBody(
+              title: title,
+              price: price,
+              description: description,
+            ),
           ),
         ],
       ),
