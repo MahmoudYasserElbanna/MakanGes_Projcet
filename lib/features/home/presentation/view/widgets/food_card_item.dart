@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
-import 'package:makanges_app/features/general_order_info/presentation/view/general_order_view.dart';
 import 'package:makanges_app/features/home/presentation/view/widgets/discount_card.dart';
 import 'order_info_list_view.dart';
 
