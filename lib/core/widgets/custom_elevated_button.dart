@@ -6,8 +6,10 @@ class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
     required this.label,
+    this.onPressed,
   });
   final String label;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -19,7 +21,7 @@ class CustomElevatedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Center(
         child: Text(
           label,
