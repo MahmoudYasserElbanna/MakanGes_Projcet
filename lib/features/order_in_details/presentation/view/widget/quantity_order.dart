@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 
@@ -77,7 +79,9 @@ class _QuantityOrderState extends State<QuantityOrder> {
                     content: Text('Please Add Quantity'),
                   ),
                 );
-              } else {}
+              } else {
+                GoRouter.of(context).push(AppRouters.myCartViewRoute);
+              }
             },
           ),
         ],
