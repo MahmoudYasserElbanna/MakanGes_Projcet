@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
-import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/general_order_view_header_icons.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/widgets/tab_bar_item_content_info.dart';
-import 'package:makanges_app/features/oreder_in_details/presentation/view/widget/additions_to_the_order_item.dart';
-import 'package:makanges_app/features/oreder_in_details/presentation/view/widget/quantity_order.dart';
+import 'package:makanges_app/features/order_in_details/presentation/view/widget/additions_to_the_order_item.dart';
+import 'package:makanges_app/features/order_in_details/presentation/view/widget/quantity_order.dart';
 
 class OrderInDetailsViewBody extends StatelessWidget {
   const OrderInDetailsViewBody({super.key});
