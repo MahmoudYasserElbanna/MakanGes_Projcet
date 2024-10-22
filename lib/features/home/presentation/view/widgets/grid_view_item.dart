@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 
 class GridViewItem extends StatelessWidget {
@@ -16,7 +17,7 @@ class GridViewItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: const Color(0xFF22A641).withOpacity(0.3),
+          color: kPrimaryColor.withOpacity(0.3),
         ),
         child: Column(
           children: [

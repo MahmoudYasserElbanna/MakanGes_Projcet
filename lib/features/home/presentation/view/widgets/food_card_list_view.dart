@@ -32,8 +32,6 @@ class FoodCardList extends StatelessWidget {
       'rating': 4.1,
       'reviewCount': '600+ review',
     },
-
-    // Add more items here...
   ];
 
   const FoodCardList({super.key});
