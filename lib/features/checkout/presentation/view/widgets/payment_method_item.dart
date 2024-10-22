@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:makanges_app/constants.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem({
@@ -20,13 +21,12 @@ class PaymentMethodItem extends StatelessWidget {
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             side: BorderSide(
-                width: 1.50,
-                color: isActive ? const Color(0xFF34A853) : Colors.grey),
+                width: 1.50, color: isActive ? kPrimaryColor : Colors.grey),
             borderRadius: BorderRadius.circular(8),
           ),
           shadows: [
             BoxShadow(
-              color: isActive ? const Color(0xFF34A853) : Colors.grey,
+              color: isActive ? kPrimaryColor : Colors.grey,
               blurRadius: 4,
             )
           ],

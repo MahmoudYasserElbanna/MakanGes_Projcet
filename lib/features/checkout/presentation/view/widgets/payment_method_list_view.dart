@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/payment_method_item.dart';
 
 class PaymentMethodListView extends StatefulWidget {
@@ -10,9 +11,9 @@ class PaymentMethodListView extends StatefulWidget {
 
 class _PaymentMethodListViewState extends State<PaymentMethodListView> {
   final List<String> paymentMethodsImages = const [
-    'assets/images/cardPayment.svg',
-    'assets/images/paypalPayment.svg',
-    'assets/images/applePayment.svg',
+    Assets.cardPayment,
+    Assets.paypalPayment,
+    Assets.applePayment,
   ];
   int activeIndex = 0;
   @override

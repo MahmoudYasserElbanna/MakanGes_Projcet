@@ -18,4 +18,7 @@ abstract class Assets {
   static const String burgerImage4 = 'assets/images/Burger_Image4.png';
   static const String burgerImage5 = 'assets/images/Burger_Image5.png';
   static const String burgerImage6 = 'assets/images/Burger_Image6.png';
+  static const String applePayment = 'assets/images/applePayment.svg';
+  static const String cardPayment = 'assets/images/cardPayment.svg';
+  static const String paypalPayment = 'assets/images/paypalPayment.svg';
 }
