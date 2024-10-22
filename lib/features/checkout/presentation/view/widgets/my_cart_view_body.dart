@@ -5,6 +5,7 @@ import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/cart_item.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/order_coupon.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/order_summary_body.dart';
+import 'package:makanges_app/features/checkout/presentation/view/widgets/payment_methodes_bottom_sheet.dart';
 
 class MyCartViewBody extends StatefulWidget {
   const MyCartViewBody({super.key});
@@ -56,7 +57,20 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               const OrderCoupon(),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              CustomElevatedButton(label: 'Order Now', onPressed: () {})
+              CustomElevatedButton(
+                  label: 'Order Now',
+                  onPressed: () {
+                    showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      useSafeArea: true,
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const PaymentMethodBottomSheet();
+                      },
+                    );
+                  })
             ],
           ),
         ),
