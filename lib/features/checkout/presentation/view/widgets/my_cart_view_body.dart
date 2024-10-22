@@ -61,8 +61,11 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
                   label: 'Order Now',
                   onPressed: () {
                     showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          topRight: Radius.circular(16),
+                        ),
                       ),
                       useSafeArea: true,
                       context: context,
