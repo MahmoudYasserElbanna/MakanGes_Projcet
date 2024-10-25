@@ -1,5 +1,6 @@
 class StripePaymentIntentInputModel {
-  final String amount, currency;
+  final String currency;
+  final int amount;
 
   StripePaymentIntentInputModel({
     required this.amount,
@@ -8,7 +9,7 @@ class StripePaymentIntentInputModel {
 
   toJson() {
     return {
-      'amount': amount,
+      'amount': amount * 100,
       'currency': currency,
     };
   }

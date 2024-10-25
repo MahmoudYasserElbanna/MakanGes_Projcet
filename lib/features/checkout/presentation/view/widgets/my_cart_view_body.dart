@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/repos/checkout_repo.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/repos/checkout_repo_impl.dart';
 import 'package:makanges_app/features/checkout/presentation/view/manager/cubit/stripe_payment_cubit.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/cart_item.dart';
