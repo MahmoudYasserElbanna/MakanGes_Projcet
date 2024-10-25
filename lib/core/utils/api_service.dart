@@ -4,7 +4,10 @@ class ApiService {
   Dio dio = Dio();
 
   Future<Response> post(
-      {required body, required url, required token, contentType}) async {
+      {required Map<String, dynamic> body,
+      required String url,
+      required String token,
+      String? contentType}) async {
     var response = await dio.post(
       url,
       data: body,
