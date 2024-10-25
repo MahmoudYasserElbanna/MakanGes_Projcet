@@ -16,18 +16,20 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-          Navigator.of(context).pop();
           GoRouter.of(context).pushNamed(AppRouters.receiptView);
         } else if (state is StripePaymentFailed) {
-          SnackBar(
+          Navigator.of(context).pop();
+          SnackBar snackBar = SnackBar(
             content: Text(state.errMessage.toString()),
             backgroundColor: Colors.red,
           );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }
       },
       builder: (context, state) {
         return CustomElevatedButton(
           label: 'Continue',
+          isLoading: state is StripePaymentLoading ? true : false,
           onPressed: () {
             StripePaymentIntentInputModel stripePaymentIntentInputModel =
                 StripePaymentIntentInputModel(

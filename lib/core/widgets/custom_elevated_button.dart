@@ -7,9 +7,11 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.label,
     this.onPressed,
+    this.isLoading = false,
   });
   final String label;
   final void Function()? onPressed;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -23,10 +25,14 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Center(
-        child: Text(
-          label,
-          style: Styles.textStyle20White,
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator(
+                color: Colors.white,
+              )
+            : Text(
+                label,
+                style: Styles.textStyle20White,
+              ),
       ),
     );
   }
