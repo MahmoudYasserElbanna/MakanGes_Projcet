@@ -31,7 +31,7 @@ class StripePaymentIntentModel {
   dynamic onBehalfOf;
   dynamic paymentMethod;
   PaymentMethodOptions? paymentMethodOptions;
-  List<String>? paymentMethodTypes;
+  List<dynamic>? paymentMethodTypes;
   dynamic processing;
   dynamic receiptEmail;
   dynamic review;
@@ -111,7 +111,7 @@ class StripePaymentIntentModel {
       nextAction: json['next_action'] as dynamic,
       onBehalfOf: json['on_behalf_of'] as dynamic,
       paymentMethod: json['payment_method'] as dynamic,
-      paymentMethodTypes: json['payment_method_types'] as List<String>?,
+      paymentMethodTypes: json['payment_method_types'] as List<dynamic>?,
       processing: json['processing'] as dynamic,
       receiptEmail: json['receipt_email'] as dynamic,
       review: json['review'] as dynamic,
