@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:makanges_app/core/utils/api_keys.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 
 void main() {
+  Stripe.publishableKey = ApiKeys.publishableKey;
   runApp(const MakanGesApp());
 }
 
