@@ -16,17 +16,18 @@ class CustomCouponOfferCard extends StatelessWidget {
         color: const Color(0xFF181818),
         borderRadius: BorderRadius.circular(12), // Cleaner BoxDecoration
       ),
-      child: const Padding(
-        padding: EdgeInsets.all(16.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'You have 2x free\ndelivery coupon!',
               style: Styles.textStyle20White,
             ),
             CustomElevatedButton(
               label: 'Apply Now',
+              onPressed: () {},
             ),
           ],
         ),
