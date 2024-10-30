@@ -1,8 +1,10 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
+import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/stripe_payment_intent_input_model.dart';
 import 'package:makanges_app/features/checkout/presentation/view/manager/cubit/stripe_payment_cubit.dart';
 
@@ -16,12 +18,19 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-          GoRouter.of(context).pushNamed(AppRouters.receiptView);
+          GoRouter.of(context).push(AppRouters.receiptView);
+          SnackBar snackBar = buildCustomSnackBar(
+            title: 'Payment Success!',
+            message: 'Payment Successful! 🎉 Thank you for your purchase',
+            contentType: ContentType.success,
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         } else if (state is StripePaymentFailed) {
           Navigator.of(context).pop();
-          SnackBar snackBar = SnackBar(
-            content: Text(state.errMessage.toString()),
-            backgroundColor: Colors.red,
+          SnackBar snackBar = buildCustomSnackBar(
+            title: 'Payment Canceled!',
+            message: 'No worries, you can complete it anytime you\'re ready.',
+            contentType: ContentType.warning,
           );
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }

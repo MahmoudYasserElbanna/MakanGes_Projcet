@@ -5,6 +5,7 @@ import 'package:makanges_app/core/utils/app_router.dart';
 
 void main() {
   Stripe.publishableKey = ApiKeys.publishableKey;
+  Stripe.merchantIdentifier = 'YOUR_MERCHANT_ID';
   runApp(const MakanGesApp());
 }
 

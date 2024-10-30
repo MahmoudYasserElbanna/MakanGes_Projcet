@@ -36,7 +36,7 @@ abstract class AppRouters {
         builder: (context, state) => const MyCartView(),
       ),
       GoRoute(
-        path: myCartViewRoute,
+        path: receiptView,
         builder: (context, state) => const ReceiptView(),
       ),
     ],

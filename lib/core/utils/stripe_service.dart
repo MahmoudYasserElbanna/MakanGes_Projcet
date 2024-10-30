@@ -24,6 +24,7 @@ class StripeService {
     await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
         paymentIntentClientSecret: paymentIntentClientSecret,
+        allowsDelayedPaymentMethods: true,
         merchantDisplayName: 'Mahmoud Yasser Elbanna',
       ),
     );
