@@ -13,7 +13,7 @@ class _PaymentMethodListViewState extends State<PaymentMethodListView> {
   final List<String> paymentMethodsImages = const [
     Assets.cardPayment,
     Assets.paypalPayment,
-    Assets.applePayment,
+    Assets.paymobPayment,
   ];
   int activeIndex = 0;
   @override

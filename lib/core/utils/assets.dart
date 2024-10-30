@@ -21,4 +21,5 @@ abstract class Assets {
   static const String applePayment = 'assets/images/applePayment.svg';
   static const String cardPayment = 'assets/images/cardPayment.svg';
   static const String paypalPayment = 'assets/images/paypalPayment.svg';
+  static const String paymobPayment = 'assets/images/payMobPayment.svg';
 }
