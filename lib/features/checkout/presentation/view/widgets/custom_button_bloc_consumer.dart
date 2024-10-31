@@ -10,11 +10,11 @@ import 'package:makanges_app/core/utils/api_keys.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/order_amount_model/details.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/order_amount_model/order_amount_model.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/order_item_list_model/item.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/order_item_list_model/order_item_list_model.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/stripe_payment_intent_input_model.dart';
+import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/details.dart';
+import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/order_amount_model.dart';
+import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_item_list_model/item.dart';
+import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_item_list_model/order_item_list_model.dart';
+import 'package:makanges_app/features/checkout/presentation/data/models/stripe_models/stripe_payment_intent_input_model.dart';
 import 'package:makanges_app/features/checkout/presentation/view/manager/cubit/stripe_payment_cubit.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
