@@ -1,15 +1,14 @@
 import 'dart:developer';
-
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
-import 'package:go_router/go_router.dart';
-import 'package:makanges_app/constants.dart';
-import 'package:makanges_app/core/utils/api_keys.dart';
+import 'package:makanges_app/core/services/api_keys.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
+import 'package:makanges_app/core/helpers/stripe_failed_execute_method.dart';
+import 'package:makanges_app/core/helpers/stripe_success_execute_method.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/details.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/order_amount_model.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_item_list_model/item.dart';
@@ -27,21 +26,9 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-          GoRouter.of(context).push(AppRouters.receiptView);
-          SnackBar snackBar = buildCustomSnackBar(
-            title: 'Payment Success!',
-            message: 'Payment Successful! 🎉 Thank you for your purchase',
-            contentType: ContentType.success,
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          stripeSuccessExecute(context);
         } else if (state is StripePaymentFailed) {
-          Navigator.of(context).pop();
-          SnackBar snackBar = buildCustomSnackBar(
-            title: 'Payment Canceled!',
-            message: 'No worries, you can complete it anytime you\'re ready.',
-            contentType: ContentType.warning,
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          stripeFiledExecute(context);
         }
       },
       builder: (context, state) {

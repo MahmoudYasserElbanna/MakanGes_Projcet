@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:makanges_app/constants.dart';
-import 'package:makanges_app/core/utils/api_keys.dart';
-import 'package:makanges_app/core/utils/api_service.dart';
+import 'package:makanges_app/core/services/api_keys.dart';
+import 'package:makanges_app/core/services/api_service.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/stripe_models/stripe_customer_ephemeral_key_model/ephemeral_key_model.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/stripe_models/stripe_customer_info_input_model.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/stripe_models/stripe_payment_intent_input_model.dart';
