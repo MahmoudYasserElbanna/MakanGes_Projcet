@@ -1,21 +1,19 @@
 import 'item.dart';
 
 class OrderItemListModel {
-	List<Item>? items;
+  List<OrderItem>? orders;
 
-	OrderItemListModel({this.items});
+  OrderItemListModel({this.orders});
 
-	factory OrderItemListModel.fromJson(Map<String, dynamic> json) {
-		return OrderItemListModel(
-			items: (json['items'] as List<dynamic>?)
-						?.map((e) => Item.fromJson(e as Map<String, dynamic>))
-						.toList(),
-		);
-	}
+  factory OrderItemListModel.fromJson(Map<String, dynamic> json) {
+    return OrderItemListModel(
+      orders: (json['items'] as List<dynamic>?)
+          ?.map((e) => OrderItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
 
-
-
-	Map<String, dynamic> toJson() => {
-				'items': items?.map((e) => e.toJson()).toList(),
-			};
+  Map<String, dynamic> toJson() => {
+        'items': orders?.map((e) => e.toJson()).toList(),
+      };
 }
