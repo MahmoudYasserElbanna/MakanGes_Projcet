@@ -3,7 +3,12 @@ import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/payment_method_item.dart';
 
 class PaymentMethodListView extends StatefulWidget {
-  const PaymentMethodListView({super.key});
+  final ValueChanged<int> onPaymentMethodSelected;
+
+  const PaymentMethodListView({
+    super.key,
+    required this.onPaymentMethodSelected,
+  });
 
   @override
   State<PaymentMethodListView> createState() => _PaymentMethodListViewState();
@@ -15,7 +20,9 @@ class _PaymentMethodListViewState extends State<PaymentMethodListView> {
     Assets.paypalPayment,
     Assets.paymobPayment,
   ];
+
   int activeIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,8 +34,10 @@ class _PaymentMethodListViewState extends State<PaymentMethodListView> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              activeIndex = index;
-              setState(() {});
+              setState(() {
+                activeIndex = index;
+              });
+              widget.onPaymentMethodSelected(activeIndex);
             },
             child: PaymentMethodItem(
               isActive: activeIndex == index,
