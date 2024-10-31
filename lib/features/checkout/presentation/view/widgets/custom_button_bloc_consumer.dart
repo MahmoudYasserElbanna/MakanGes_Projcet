@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
@@ -44,6 +45,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
                 StripePaymentIntentInputModel(
               amount: 100,
               currency: 'usd',
+              customerId: stripeCustomerId,
             );
             BlocProvider.of<StripePaymentCubit>(context).makePayment(
               stripePaymentIntentInputModel,
