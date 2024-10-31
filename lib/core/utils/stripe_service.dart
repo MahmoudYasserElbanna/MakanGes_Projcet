@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/api_keys.dart';
 import 'package:makanges_app/core/utils/api_service.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/stripe_payment_intent_input_model.dart';
@@ -11,7 +12,7 @@ class StripeService {
     ApiService apiService = ApiService();
     var response = await apiService.post(
       body: stripePaymentIntentInputModel.toJson(),
-      url: 'https://api.stripe.com/v1/payment_intents',
+      url: '$stripeBaseUrl/payment_intents',
       token: ApiKeys.stripeApiKey,
       contentType: Headers.formUrlEncodedContentType,
     );
@@ -43,5 +44,20 @@ class StripeService {
       paymentIntentClientSecret: stripePaymentIntentModel.clientSecret!,
     );
     await displayPaymentSheet();
+  }
+
+  Future createEphemeralKey({required String customerId}) async {
+    var response = await ApiService().post(
+      body: {
+        'customer': customerId,
+      },
+      url: '$stripeBaseUrl/ephemeral_keys',
+      headers: {
+        'Content-Type': Headers.formUrlEncodedContentType,
+        'Stripe-Version': '2023-08-16',
+        'Authorization': 'Bearer $ApiKeys.stripeApiKey,',
+      },
+    );
+    return response.data;
   }
 }

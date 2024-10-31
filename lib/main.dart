@@ -19,3 +19,14 @@ class MakanGesApp extends StatelessWidget {
     );
   }
 }
+
+/*
+  To Create Customer ID in the First you Need to create Customer Object when he create an Account
+  Create Ephemeral Customer Key 'https://api.stripe.com/v1/ephemeral_key'
+  -Header "Stripe-Version: 2023-08-16"
+  -Method "POST"
+  -Parameter "customer"="{{CUSTOMER_ID}}" // get it from payment intent input
+  to create customer 'https://api.stripe.com/v1/customers'
+  [1] create customer to get it's own id 
+  [2] send this id to get Ephemeral Customer Key
+ */
