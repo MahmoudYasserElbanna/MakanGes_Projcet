@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
 
-void stripeSuccessExecute(BuildContext context) {
+void paymentSuccessExecute(BuildContext context) {
   GoRouter.of(context).push(AppRouters.receiptView);
   SnackBar snackBar = buildCustomSnackBar(
     title: 'Payment Success!',

@@ -2,7 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
 
-void stripeFiledExecute(BuildContext context) {
+void paymentFiledExecute(BuildContext context) {
   Navigator.of(context).pop();
   SnackBar snackBar = buildCustomSnackBar(
     title: 'Payment Failed!',

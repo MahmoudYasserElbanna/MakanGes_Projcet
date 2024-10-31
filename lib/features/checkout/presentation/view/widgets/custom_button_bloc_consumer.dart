@@ -7,8 +7,8 @@ import 'package:makanges_app/core/services/api_keys.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
-import 'package:makanges_app/core/helpers/stripe_failed_execute_method.dart';
-import 'package:makanges_app/core/helpers/stripe_success_execute_method.dart';
+import 'package:makanges_app/core/helpers/payment_failed_execute_method.dart';
+import 'package:makanges_app/core/helpers/paymnet_success_execute_method.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/details.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_amount_model/order_amount_model.dart';
 import 'package:makanges_app/features/checkout/presentation/data/models/paypal_models/order_item_list_model/item.dart';
@@ -26,9 +26,9 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-          stripeSuccessExecute(context);
+          paymentSuccessExecute(context);
         } else if (state is StripePaymentFailed) {
-          stripeFiledExecute(context);
+          paymentFiledExecute(context);
         }
       },
       builder: (context, state) {
