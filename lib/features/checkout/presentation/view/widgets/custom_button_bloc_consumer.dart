@@ -39,7 +39,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomElevatedButton(
           label: 'Continue',
-          isLoading: state is StripePaymentLoading ? true : false,
+          isLoading: state is PaymentLoading ? true : false,
           onPressed: () {
             StripePaymentIntentInputModel stripePaymentIntentInputModel =
                 StripePaymentIntentInputModel(

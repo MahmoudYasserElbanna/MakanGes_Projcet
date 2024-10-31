@@ -10,7 +10,7 @@ class StripePaymentCubit extends Cubit<StripePaymentState> {
   final CheckoutRepo checkoutRepo;
   Future<void> makePayment(
       StripePaymentIntentInputModel stripePaymentIntentInputModel) async {
-    emit(StripePaymentLoading());
+    emit(PaymentLoading());
     var data = await checkoutRepo.makePayment(
         stripePaymentIntentInputModel: stripePaymentIntentInputModel);
     data.fold(
