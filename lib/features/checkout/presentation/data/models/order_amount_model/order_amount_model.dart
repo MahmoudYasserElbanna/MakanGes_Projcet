@@ -1,27 +1,26 @@
 import 'details.dart';
 
 class OrderAmountModel {
-	String? total;
-	String? currency;
-	Details? details;
+  final String? total;
+  final String? currency;
+  final OrderDetails? details;
 
-	OrderAmountModel({this.total, this.currency, this.details});
+  OrderAmountModel(
+      {required this.total, required this.currency, required this.details});
 
-	factory OrderAmountModel.fromJson(Map<String, dynamic> json) {
-		return OrderAmountModel(
-			total: json['total'] as String?,
-			currency: json['currency'] as String?,
-			details: json['details'] == null
-						? null
-						: Details.fromJson(json['details'] as Map<String, dynamic>),
-		);
-	}
+  factory OrderAmountModel.fromJson(Map<String, dynamic> json) {
+    return OrderAmountModel(
+      total: json['total'] as String?,
+      currency: json['currency'] as String?,
+      details: json['details'] == null
+          ? null
+          : OrderDetails.fromJson(json['details'] as Map<String, dynamic>),
+    );
+  }
 
-
-
-	Map<String, dynamic> toJson() => {
-				'total': total,
-				'currency': currency,
-				'details': details?.toJson(),
-			};
+  Map<String, dynamic> toJson() => {
+        'total': total,
+        'currency': currency,
+        'details': details?.toJson(),
+      };
 }
