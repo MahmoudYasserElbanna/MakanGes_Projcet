@@ -30,8 +30,3 @@ class MakanGesApp extends StatelessWidget {
   [1] create customer to get it's own id 
   [2] send this id to get Ephemeral Customer Key
  */
-
-
-/* Fluter PayPal Payment
-  [1] Create Account 
- */
