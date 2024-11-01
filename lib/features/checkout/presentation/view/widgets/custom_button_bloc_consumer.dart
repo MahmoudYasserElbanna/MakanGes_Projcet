@@ -22,7 +22,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         if (state is StripePaymentSuccess) {
           paymentSuccessExecute(context);
         } else if (state is StripePaymentFailed) {
-          paymentFiledExecute(context);
+          paymentCanceledExecute(context);
         }
       },
       builder: (context, state) {

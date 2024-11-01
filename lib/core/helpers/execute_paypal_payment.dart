@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:makanges_app/core/helpers/payment_state_execution.dart';
@@ -23,13 +25,14 @@ void executePayPal(
           "item_list": transactionData.orderItemList.toJson(),
         }
       ],
+      note: 'PaypalCheckoutView',
       onSuccess: (Map params) async {
-        // log("onSuccess: $params");
+        log("onSuccess: $params");
         Navigator.pop(context);
         paymentSuccessExecute(context);
       },
       onError: (error) {
-        // log("onError: $error");
+        log("onError: $error");
         Navigator.pop(context);
         paymentFiledExecute(context);
       },
