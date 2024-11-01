@@ -23,21 +23,20 @@ void executePayPal(
           "item_list": transactionData.orderItemList.toJson(),
         }
       ],
-      note: "Contact us for any questions on your order.",
       onSuccess: (Map params) async {
         // log("onSuccess: $params");
         Navigator.pop(context);
-        PaymentStateExecution.paymentSuccessExecute(context);
+        paymentSuccessExecute(context);
       },
       onError: (error) {
         // log("onError: $error");
         Navigator.pop(context);
-        PaymentStateExecution.paymentFiledExecute(context);
+        paymentFiledExecute(context);
       },
       onCancel: () {
         // print('cancelled:');
         Navigator.pop(context);
-        PaymentStateExecution.paymentCanceledExecute(context);
+        paymentCanceledExecute(context);
       },
     ),
   ));

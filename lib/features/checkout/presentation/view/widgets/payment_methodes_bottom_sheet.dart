@@ -31,7 +31,8 @@ class _PaymentMethodBottomSheetState extends State<PaymentMethodBottomSheet> {
           ),
           const SizedBox(height: 16),
           CustomButtonBlocConsumer(
-              selectedPaymentMethodIndex: selectedPaymentMethodIndex),
+            selectedPaymentMethodIndex: selectedPaymentMethodIndex,
+          ),
         ],
       ),
     );

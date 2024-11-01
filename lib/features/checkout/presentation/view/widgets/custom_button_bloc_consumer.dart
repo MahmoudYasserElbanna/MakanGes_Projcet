@@ -20,9 +20,9 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-          PaymentStateExecution.paymentSuccessExecute(context);
+          paymentSuccessExecute(context);
         } else if (state is StripePaymentFailed) {
-          PaymentStateExecution.paymentFiledExecute(context);
+          paymentFiledExecute(context);
         }
       },
       builder: (context, state) {
@@ -39,7 +39,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
               executePayPal(context, transactionData);
             } else if (selectedPaymentMethodIndex == 2) {
               // Paymob selected
-              // Implement Paymob payment flow
+              // TODO: Implement Paymob payment flow
             }
           },
         );
