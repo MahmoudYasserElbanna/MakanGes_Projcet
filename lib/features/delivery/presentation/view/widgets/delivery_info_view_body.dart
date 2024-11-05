@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/assets.dart';
-import 'package:makanges_app/features/checkout/presentation/view/widgets/back_arrow_icon.dart';
-import 'package:makanges_app/features/checkout/presentation/view/widgets/more_icon.dart';
-import 'package:makanges_app/features/checkout/presentation/view/widgets/share_location.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/back_arrow_icon.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/more_icon.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/share_location.dart';
 
 class DeliveryInfoViewBody extends StatelessWidget {
   const DeliveryInfoViewBody({super.key});

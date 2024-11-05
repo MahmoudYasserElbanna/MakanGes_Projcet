@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:makanges_app/features/checkout/presentation/view/my_cart_view.dart';
-import 'package:makanges_app/features/checkout/presentation/view/delivery_info_view.dart';
+import 'package:makanges_app/features/delivery/presentation/view/delivery_info_view.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/general_order_view.dart';
 import 'package:makanges_app/features/home/presentation/view/home_view.dart';
 import 'package:makanges_app/features/order_in_details/presentation/view/order_in_details_view.dart';
