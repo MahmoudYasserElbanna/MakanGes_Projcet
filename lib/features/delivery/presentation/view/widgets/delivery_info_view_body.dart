@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/back_arrow_icon.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/more_icon.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/order_progress_bar.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/share_location.dart';
 
 class DeliveryInfoViewBody extends StatelessWidget {
@@ -20,10 +21,14 @@ class DeliveryInfoViewBody extends StatelessWidget {
         const BackArrowIcon(),
         const MoreIcon(),
         const ShareLocation(),
-        Column(
-          children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.65),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.6 + 24),
+              const OrderProgressBar()
+            ],
+          ),
         )
       ],
     );
