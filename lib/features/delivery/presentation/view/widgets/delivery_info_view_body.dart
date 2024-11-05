@@ -22,7 +22,8 @@ class DeliveryInfoViewBody extends StatelessWidget {
         const MoreIcon(),
         const ShareLocation(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05),
           child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.6 + 24),

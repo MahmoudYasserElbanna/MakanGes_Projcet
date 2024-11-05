@@ -9,8 +9,8 @@ class ProgressLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 2,
-      width: MediaQuery.of(context).size.width * 0.14,
+      height: 3,
+      width: MediaQuery.of(context).size.width * 0.11,
       color: isCompletedStage ? Colors.green : Colors.grey,
     );
   }

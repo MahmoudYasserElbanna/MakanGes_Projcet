@@ -9,30 +9,35 @@ class OrderProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        DeliveryIconStage(
+        const DeliveryIconStage(
           icon: Icons.receipt_long_rounded,
           isCompletedStage: true,
         ),
-        ProgressLine(
+        const ProgressLine(
           isCompletedStage: true,
         ),
-        DeliveryIconStage(
+        const DeliveryIconStage(
           icon: Icons.delivery_dining_outlined,
           isCompletedStage: true,
         ),
-        ProgressLine(
+        const ProgressLine(
           isCompletedStage: true,
         ),
-        DeliveryIconStage(
+        const DeliveryIconStage(
           icon: Icons.delivery_dining_outlined,
           isCurrentStage: true,
         ),
-        ProgressLine(
+        Container(
+          width: 25,
+          height: 3,
+          color: Colors.green,
+        ),
+        const ProgressLine(
           isCompletedStage: false,
         ),
-        DeliveryIconStage(
+        const DeliveryIconStage(
           icon: Icons.home_work_rounded,
           isNextStage: true,
         ),
