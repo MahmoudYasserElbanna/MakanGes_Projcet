@@ -4,6 +4,7 @@ import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/back_arrow_icon.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/communication_with_delivery.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_details.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_man_info.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/more_icon.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/order_delivery_time.dart';
@@ -53,14 +54,8 @@ class DeliveryInfoViewBody extends StatelessWidget {
                 'Delivery Details',
                 style: Styles.textStyle20,
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.restaurant_rounded,
-                    color: kPrimaryColor,
-                  )
-                ],
-              )
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              const DeliveryDetails()
             ],
           ),
         )
