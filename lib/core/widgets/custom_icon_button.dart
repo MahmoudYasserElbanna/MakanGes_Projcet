@@ -20,6 +20,13 @@ class CustomIconButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
+          shadows: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.25),
+              offset: const Offset(0, 4),
+              blurRadius: 8,
+            ),
+          ],
         ),
         child: GestureDetector(onTap: onPressed, child: Icon(icon)),
       ),
