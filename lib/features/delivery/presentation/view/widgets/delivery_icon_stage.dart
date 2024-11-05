@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 
 class DeliveryIconStage extends StatelessWidget {
   const DeliveryIconStage({
@@ -21,14 +22,14 @@ class DeliveryIconStage extends StatelessWidget {
         color: isCompletedStage
             ? Colors.transparent
             : isCurrentStage
-                ? Colors.green
+                ? kPrimaryColor
                 : Colors.white,
         borderRadius: const BorderRadius.all(Radius.circular(16)),
         border: Border.all(
           color: isCompletedStage
-              ? Colors.green
+              ? kPrimaryColor
               : isCurrentStage
-                  ? Colors.green
+                  ? kPrimaryColor
                   : Colors.grey,
           width: 2,
         ),
@@ -36,12 +37,12 @@ class DeliveryIconStage extends StatelessWidget {
       child: Icon(
         icon,
         color: isCompletedStage
-            ? Colors.green
+            ? kPrimaryColor
             : isCurrentStage
                 ? Colors.white
                 : isNextStage
                     ? Colors.grey
-                    : Colors.green,
+                    : kPrimaryColor,
       ),
     );
   }

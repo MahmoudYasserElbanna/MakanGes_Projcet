@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/back_arrow_icon.dart';
@@ -47,6 +48,19 @@ class DeliveryInfoViewBody extends StatelessWidget {
                   CommunicationWithDriver(),
                 ],
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              const Text(
+                'Delivery Details',
+                style: Styles.textStyle20,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.restaurant_rounded,
+                    color: kPrimaryColor,
+                  )
+                ],
+              )
             ],
           ),
         )

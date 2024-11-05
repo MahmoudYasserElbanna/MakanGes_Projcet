@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 
 class ProgressLine extends StatelessWidget {
   const ProgressLine({
@@ -11,7 +12,7 @@ class ProgressLine extends StatelessWidget {
     return Container(
       height: 3,
       width: MediaQuery.of(context).size.width * 0.11,
-      color: isCompletedStage ? Colors.green : Colors.grey,
+      color: isCompletedStage ? kPrimaryColor : Colors.grey,
     );
   }
 }

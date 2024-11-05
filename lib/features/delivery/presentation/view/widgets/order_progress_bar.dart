@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_icon_stage.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/progress_line.dart';
 
@@ -32,7 +33,7 @@ class OrderProgressBar extends StatelessWidget {
         Container(
           width: 25,
           height: 3,
-          color: Colors.green,
+          color: kPrimaryColor,
         ),
         const ProgressLine(
           isCompletedStage: false,
