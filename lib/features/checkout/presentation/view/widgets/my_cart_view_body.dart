@@ -19,52 +19,43 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'My Cart',
-          style: Styles.textStyle20,
-        ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CartItem(
-                imagePath: Assets.burgerImage1,
-                description:
-                    'Cheese Burger\nNo tomato - Free\nExtra patty +\$5\nExtra onion +\$1\nExtra cheese +\$2',
-                price: 23,
-                quantity: quantity,
-                onQuantityChanged: (newQuantity) {
-                  setState(() {
-                    quantity = newQuantity;
-                  });
-                },
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              const Divider(thickness: 2),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              const Text(
-                'Order Summary',
-                style: Styles.textStyle20,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              const OrderSummaryBody(),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              const OrderCoupon(),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              CustomElevatedButton(
-                label: 'Order Now',
-                onPressed: () {
-                  executeModelBottomSheet(context);
-                },
-              ),
-            ],
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CartItem(
+              imagePath: Assets.burgerImage1,
+              description:
+                  'Cheese Burger\nNo tomato - Free\nExtra patty +\$5\nExtra onion +\$1\nExtra cheese +\$2',
+              price: 23,
+              quantity: quantity,
+              onQuantityChanged: (newQuantity) {
+                setState(() {
+                  quantity = newQuantity;
+                });
+              },
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            const Divider(thickness: 2),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            const Text(
+              'Order Summary',
+              style: Styles.textStyle20,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            const OrderSummaryBody(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            const OrderCoupon(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            CustomElevatedButton(
+              label: 'Order Now',
+              onPressed: () {
+                executeModelBottomSheet(context);
+              },
+            ),
+          ],
         ),
       ),
     );

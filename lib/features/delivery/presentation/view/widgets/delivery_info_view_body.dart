@@ -9,25 +9,23 @@ class DeliveryInfoViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            Assets.mapImagePng,
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.6,
-            fit: BoxFit.cover,
-          ),
-          const BackArrowIcon(),
-          const MoreIcon(),
-          const ShareLocation(),
-          Column(
-            children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.65),
-            ],
-          )
-        ],
-      ),
+    return Stack(
+      children: [
+        Image.asset(
+          Assets.mapImagePng,
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.6,
+          fit: BoxFit.cover,
+        ),
+        const BackArrowIcon(),
+        const MoreIcon(),
+        const ShareLocation(),
+        Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * 0.65),
+          ],
+        )
+      ],
     );
   }
 }

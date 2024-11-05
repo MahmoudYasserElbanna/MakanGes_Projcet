@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:makanges_app/constants.dart';
+import 'package:makanges_app/core/utils/app_router.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   const CustomNavigationBar({super.key});
@@ -28,9 +30,13 @@ class CustomNavigationBar extends StatelessWidget {
               onPressed: () {},
             ),
             GButton(
-              icon: Icons.menu_open,
-              text: 'Order',
-              onPressed: () {},
+              icon: Icons.delivery_dining_outlined,
+              iconSize: 28,
+              text: 'Delivery',
+              onPressed: () {
+                GoRouter.of(context)
+                    .pushReplacement(AppRouters.deliveryInfoView);
+              },
             ),
             GButton(
               icon: FontAwesomeIcons.heart,
