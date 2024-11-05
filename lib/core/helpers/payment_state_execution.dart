@@ -5,7 +5,7 @@ import 'package:makanges_app/core/utils/app_router.dart';
 import 'package:makanges_app/core/widgets/custom_snack_bar.dart';
 
 void paymentSuccessExecute(BuildContext context) {
-  GoRouter.of(context).push(AppRouters.deliveryInfoView);
+  GoRouter.of(context).push(AppRouters.deliveryInfoViewRoute);
   SnackBar snackBar = buildCustomSnackBar(
     title: 'Payment Success!',
     message: 'Payment Successful! 🎉 Thank you for your purchase',

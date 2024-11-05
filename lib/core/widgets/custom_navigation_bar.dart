@@ -5,9 +5,14 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
 
-class CustomNavigationBar extends StatelessWidget {
+class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({super.key});
 
+  @override
+  State<CustomNavigationBar> createState() => _CustomNavigationBarState();
+}
+
+class _CustomNavigationBarState extends State<CustomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,15 +32,17 @@ class CustomNavigationBar extends StatelessWidget {
             GButton(
               icon: FontAwesomeIcons.houseChimney,
               text: 'Home',
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).pushReplacement(AppRouters.homeViewRoute);
+              },
             ),
             GButton(
               icon: Icons.delivery_dining_outlined,
               iconSize: 28,
               text: 'Delivery',
-              onPressed: () {
-                GoRouter.of(context)
-                    .pushReplacement(AppRouters.deliveryInfoView);
+              onPressed: () async {
+                await GoRouter.of(context)
+                    .pushReplacement(AppRouters.deliveryInfoViewRoute);
               },
             ),
             GButton(

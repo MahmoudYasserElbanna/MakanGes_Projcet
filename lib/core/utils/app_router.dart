@@ -12,7 +12,7 @@ abstract class AppRouters {
   static const String generalOrderInfoViewRoute = '/generalOrderInfoViewRoute';
   static const String orderInDetailsViewRoute = '/orderInDetailsViewRoute';
   static const String myCartViewRoute = '/myCartViewRoute';
-  static const String deliveryInfoView = '/deliveryInfoView';
+  static const String deliveryInfoViewRoute = '/deliveryInfoView';
   static GoRouter router = GoRouter(
     routes: [
       GoRoute(
@@ -36,7 +36,7 @@ abstract class AppRouters {
         builder: (context, state) => const MyCartView(),
       ),
       GoRoute(
-        path: deliveryInfoView,
+        path: deliveryInfoViewRoute,
         builder: (context, state) => const DeliveryInfoView(),
       ),
     ],
