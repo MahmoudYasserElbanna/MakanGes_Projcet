@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:makanges_app/core/helpers/execute_model_bottom_sheet.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
-import 'package:makanges_app/features/checkout/presentation/data/models/repos/checkout_repo_impl.dart';
-import 'package:makanges_app/features/checkout/presentation/view/manager/cubit/stripe_payment_cubit.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/cart_item.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/order_coupon.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/order_summary_body.dart';
-import 'package:makanges_app/features/checkout/presentation/view/widgets/payment_methodes_bottom_sheet.dart';
 
 class MyCartViewBody extends StatefulWidget {
   const MyCartViewBody({super.key});
@@ -63,23 +60,7 @@ class _MyCartViewBodyState extends State<MyCartViewBody> {
               CustomElevatedButton(
                 label: 'Order Now',
                 onPressed: () {
-                  showModalBottomSheet(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(16),
-                      ),
-                    ),
-                    useSafeArea: true,
-                    context: context,
-                    builder: (BuildContext context) {
-                      return BlocProvider(
-                        create: (context) =>
-                            StripePaymentCubit(CheckoutRepoImpl()),
-                        child: const PaymentMethodBottomSheet(),
-                      );
-                    },
-                  );
+                  executeModelBottomSheet(context);
                 },
               ),
             ],
