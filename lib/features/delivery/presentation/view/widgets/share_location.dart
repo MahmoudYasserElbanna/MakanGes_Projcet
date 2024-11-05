@@ -14,8 +14,11 @@ class ShareLocation extends StatelessWidget {
       right: MediaQuery.of(context).size.width * 0.03,
       child: CustomIconButton(
         icon: Icons.location_searching_rounded,
-        onPressed: () async {
-          Share.share('Share Live Location');
+        onPressed: () {
+          Share.share(
+            'I\'m sharing my live order delivery location with you!',
+            subject: 'Location',
+          );
         },
       ),
     );

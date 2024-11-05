@@ -13,7 +13,12 @@ class MoreIcon extends StatelessWidget {
       right: MediaQuery.of(context).size.width * 0.03,
       child: CustomIconButton(
         icon: Icons.more_horiz,
-        onPressed: () {},
+        onPressed: () {
+          const Drawer(
+            backgroundColor: Colors.red,
+            child: Text('data'),
+          );
+        },
       ),
     );
   }

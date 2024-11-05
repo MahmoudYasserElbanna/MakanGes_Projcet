@@ -20,7 +20,7 @@ class OrderProgressBar extends StatelessWidget {
           isCompletedStage: true,
         ),
         const DeliveryIconStage(
-          icon: Icons.delivery_dining_outlined,
+          icon: Icons.soup_kitchen_outlined,
           isCompletedStage: true,
         ),
         const ProgressLine(

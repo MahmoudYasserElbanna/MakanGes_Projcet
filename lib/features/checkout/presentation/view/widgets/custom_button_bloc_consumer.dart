@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:makanges_app/core/helpers/execute_paypal_payment.dart';
-import 'package:makanges_app/core/helpers/execute_stripe_payment.dart';
-import 'package:makanges_app/core/helpers/get_transaction_data.dart';
-import 'package:makanges_app/core/helpers/payment_state_execution.dart';
+import 'package:makanges_app/core/functions/execute_paypal_payment.dart';
+import 'package:makanges_app/core/functions/execute_stripe_payment.dart';
+import 'package:makanges_app/core/functions/get_transaction_data.dart';
+import 'package:makanges_app/core/functions/payment_state_execution.dart';
 import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/features/checkout/presentation/view/manager/cubit/stripe_payment_cubit.dart';
 
