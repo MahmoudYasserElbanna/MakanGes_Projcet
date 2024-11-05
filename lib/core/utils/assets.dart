@@ -24,4 +24,5 @@ abstract class Assets {
   static const String paymobPayment = 'assets/images/payMobPayment.svg';
   static const String mapImage = 'assets/images/map_image.svg';
   static const String mapImagePng = 'assets/images/map_image.png';
+  static const String deliveryMan = 'assets/images/delivery_man.png';
 }
