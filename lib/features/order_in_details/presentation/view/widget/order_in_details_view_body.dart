@@ -13,7 +13,6 @@ class OrderInDetailsViewBody extends StatelessWidget {
     {'title': 'Extra Fries', 'isFree': false},
     {'title': 'No Tomato', 'isFree': true},
     {'title': 'No Onion', 'isFree': true},
-    {'title': 'No Onion', 'isFree': true},
     {'title': 'Bacon', 'isFree': false},
     {'title': 'Pickles', 'isFree': true},
     {'title': 'Lettuce Wrap', 'isFree': true},

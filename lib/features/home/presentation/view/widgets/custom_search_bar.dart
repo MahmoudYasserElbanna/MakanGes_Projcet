@@ -15,7 +15,7 @@ class CustomSearchBar extends StatelessWidget {
           maxHeight: 56,
           maxWidth: double.infinity,
         ),
-        elevation: MaterialStateProperty.all(1),
+        elevation: WidgetStateProperty.all(2),
         hintText: 'Search food, drink, etc..',
         leading: IconButton(
           icon: const Icon(Icons.search_outlined),
