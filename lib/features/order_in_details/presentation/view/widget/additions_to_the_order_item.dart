@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 
 class AdditionsToTheOrderItem extends StatefulWidget {
@@ -43,7 +44,7 @@ class _AdditionsToTheOrderItemState extends State<AdditionsToTheOrderItem> {
                 widget.isSelected
                     ? Icons.check_box_rounded
                     : Icons.check_box_outline_blank_rounded,
-                color: widget.isSelected ? Colors.green : null,
+                color: widget.isSelected ? kPrimaryColor : null,
               ),
               onPressed: () {
                 widget.onCheckedChanged(!widget.isSelected);

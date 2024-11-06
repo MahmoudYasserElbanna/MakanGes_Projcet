@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:makanges_app/core/utils/app_router.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 
 class EditButton extends StatelessWidget {
@@ -10,9 +9,9 @@ class EditButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
+        Icon(
           Icons.edit_note_rounded,
-          color: Color(0xFF19A83E),
+          color: kPrimaryColor,
           size: 32,
         ),
         const SizedBox(width: 8),

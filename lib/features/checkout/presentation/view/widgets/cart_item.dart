@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/styles.dart';
 import 'package:makanges_app/core/widgets/quantity_counter.dart';
 import 'package:makanges_app/features/checkout/presentation/view/widgets/edit_button.dart';
@@ -25,7 +26,7 @@ class CartItem extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 2, color: Color(0xFF19A83E)),
+          side: BorderSide(width: 2, color: kPrimaryColor),
           borderRadius: BorderRadius.circular(8),
         ),
       ),
