@@ -1,5 +1,5 @@
 abstract class Assets {
-  static const String logo = 'assets/images/SplashViewIcon.png';
+  static const String logo = 'assets/images/logo.png';
   static const String burgerIcon = 'assets/images/Burger_Icon.png';
   static const String drinksIcon = 'assets/images/Drink_Icon.png';
   static const String meatIcon = 'assets/images/Meat_Icon.png';
@@ -25,6 +25,4 @@ abstract class Assets {
   static const String mapImage = 'assets/images/map_image.svg';
   static const String mapImagePng = 'assets/images/map_image.png';
   static const String deliveryMan = 'assets/images/delivery_man.png';
-
-  static const String splashViewIcon = 'assets/images/App_Logo.png';
 }
