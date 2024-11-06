@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/styles.dart';
+import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 
-class OrderName extends StatelessWidget {
+class OrderName extends StatefulWidget {
   const OrderName({
     super.key,
   });
 
   @override
+  State<OrderName> createState() => _OrderNameState();
+}
+
+class _OrderNameState extends State<OrderName> {
+  bool isFavorite = false;
+
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text.rich(
+        const Text.rich(
           TextSpan(
             children: [
               TextSpan(
@@ -25,8 +40,13 @@ class OrderName extends StatelessWidget {
             ],
           ),
         ),
-        Icon(
-          Icons.favorite_border_rounded,
+        GestureDetector(
+          onTap: toggleFavorite,
+          child: Icon(
+            isFavorite ? Icons.favorite : Icons.favorite_border_rounded,
+            color: kPrimaryColor,
+            size: 32,
+          ),
         )
       ],
     );
