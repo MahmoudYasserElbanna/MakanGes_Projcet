@@ -10,7 +10,7 @@ class ShareLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: MediaQuery.of(context).size.height * 0.55,
+      bottom: MediaQuery.of(context).size.height * 0.03,
       right: MediaQuery.of(context).size.width * 0.03,
       child: CustomIconButton(
         icon: Icons.location_searching_rounded,

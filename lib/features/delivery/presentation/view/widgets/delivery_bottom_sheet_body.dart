@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/core/utils/styles.dart';
+import 'package:makanges_app/core/widgets/custom_elevated_button.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/order_delivery_time.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/order_progress_bar.dart';
 import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_details.dart';
@@ -16,7 +17,7 @@ class DeliveryBottomSheetBody extends StatelessWidget {
     final mediumSpacing = MediaQuery.of(context).size.height * 0.02;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: padding),
+      padding: EdgeInsets.all(padding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,6 +34,9 @@ class DeliveryBottomSheetBody extends StatelessWidget {
           ),
           SizedBox(height: smallSpacing),
           const DeliveryDetails(),
+          const Spacer(),
+          CustomElevatedButton(label: 'Track Order', onPressed: () {}),
+          SizedBox(height: mediumSpacing),
         ],
       ),
     );

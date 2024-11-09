@@ -21,7 +21,10 @@ class DeliveryIcon extends StatelessWidget {
         onPressed: () {
           showBottomSheet(
             context: context,
-            builder: (context) => const DeliveryBottomSheetBody(),
+            builder: (context) => SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              child: const DeliveryBottomSheetBody(),
+            ),
           );
         },
       ),
