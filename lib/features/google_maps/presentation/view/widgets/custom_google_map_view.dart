@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:makanges_app/constants.dart';
+import 'package:makanges_app/core/utils/assets.dart';
 
 class CustomGoogleMapView extends StatefulWidget {
   const CustomGoogleMapView({super.key});
@@ -21,11 +22,15 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
       target: initialPosition,
       zoom: streetZoomView,
     );
-    initMapStyle();
     super.initState();
   }
 
-  initMapStyle() {}
+  initMapStyle() async {
+    var nightMapStyle = await DefaultAssetBundle.of(context)
+        .loadString(Assets.nightMapStylePath);
+    googleMapController.setMapStyle(nightMapStyle);
+  }
+
   @override
   void dispose() {
     googleMapController.dispose();
@@ -36,13 +41,10 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
   Widget build(BuildContext context) {
     return GoogleMap(
       initialCameraPosition: initialCameraPosition,
+      zoomControlsEnabled: false,
       onMapCreated: (controller) {
         googleMapController = controller;
-      },
-      onTap: (argument) {
-        googleMapController.animateCamera(
-          CameraUpdate.newLatLng(const LatLng(30.246315510129456, 31.2222)),
-        );
+        initMapStyle();
       },
     );
   }

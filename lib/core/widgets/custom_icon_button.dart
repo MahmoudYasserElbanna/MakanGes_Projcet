@@ -5,18 +5,24 @@ class CustomIconButton extends StatelessWidget {
     super.key,
     required this.icon,
     required this.onPressed,
+    this.width,
+    this.bgColor,
+    this.iconColor,
   });
   final IconData icon;
   final VoidCallback onPressed;
+  final double? width;
+  final Color? bgColor;
+  final Color? iconColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0),
       child: Container(
-        width: 32,
+        width: width ?? 32,
         height: 32,
         decoration: ShapeDecoration(
-          color: const Color(0xFFD9D9D9),
+          color: bgColor ?? const Color(0xFFD9D9D9),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -28,7 +34,13 @@ class CustomIconButton extends StatelessWidget {
             ),
           ],
         ),
-        child: GestureDetector(onTap: onPressed, child: Icon(icon)),
+        child: GestureDetector(
+          onTap: onPressed,
+          child: Icon(
+            icon,
+            color: iconColor ?? Colors.black,
+          ),
+        ),
       ),
     );
   }

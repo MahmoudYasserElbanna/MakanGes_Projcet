@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/widgets/custom_icon_button.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_info_view_body.dart';
 
-class MoreIcon extends StatelessWidget {
-  const MoreIcon({
+class DeliveryIcon extends StatelessWidget {
+  const DeliveryIcon({
     super.key,
   });
 
@@ -12,11 +14,14 @@ class MoreIcon extends StatelessWidget {
       top: 42,
       right: MediaQuery.of(context).size.width * 0.03,
       child: CustomIconButton(
-        icon: Icons.more_horiz,
+        width: 64,
+        bgColor: kPrimaryColor,
+        icon: Icons.delivery_dining_rounded,
+        iconColor: Colors.white,
         onPressed: () {
-          const Drawer(
-            backgroundColor: Colors.red,
-            child: Text('data'),
+          showBottomSheet(
+            context: context,
+            builder: (context) => const DeliveryBottomSheetBody(),
           );
         },
       ),
