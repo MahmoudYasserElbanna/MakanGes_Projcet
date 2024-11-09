@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:makanges_app/core/services/api_keys.dart';
 import 'package:makanges_app/core/utils/app_router.dart';
+import 'package:makanges_app/features/delivery/presentation/view/delivery_info_view.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_details.dart';
 
 void main() {
   Stripe.publishableKey = ApiKeys.publishableKey;
@@ -13,10 +15,15 @@ class MakanGesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouters.router,
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: DeliveryInfoView(),
     );
+
+    // return MaterialApp.router(
+    //   routerConfig: AppRouters.router,
+    //   debugShowCheckedModeBanner: false,
+    // );
   }
 }
 
