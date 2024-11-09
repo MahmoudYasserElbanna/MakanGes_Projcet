@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/widgets/custom_icon_button.dart';
-import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_info_view_body.dart';
+import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_bottom_sheet_body.dart';
 
 class DeliveryIcon extends StatelessWidget {
   const DeliveryIcon({
