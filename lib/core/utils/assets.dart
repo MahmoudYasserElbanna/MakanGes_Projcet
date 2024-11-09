@@ -25,4 +25,10 @@ abstract class Assets {
   static const String mapImage = 'assets/images/map_image.svg';
   static const String mapImagePng = 'assets/images/map_image.png';
   static const String deliveryMan = 'assets/images/delivery_man.png';
+  static const String nightMapStylePath =
+      'assets/maps_styles/night_map_style.json';
+  static const String standardMapStylePath =
+      'assets/maps_styles/standard_map_style.json';
+  static const String retroMapStylePath =
+      'assets/maps_styles/retro_map_style.json';
 }

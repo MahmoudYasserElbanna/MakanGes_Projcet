@@ -21,9 +21,11 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
       target: initialPosition,
       zoom: streetZoomView,
     );
+    initMapStyle();
     super.initState();
   }
 
+  initMapStyle() {}
   @override
   void dispose() {
     googleMapController.dispose();
