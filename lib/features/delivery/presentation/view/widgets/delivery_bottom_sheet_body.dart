@@ -35,7 +35,7 @@ class DeliveryBottomSheetBody extends StatelessWidget {
           SizedBox(height: smallSpacing),
           const DeliveryDetails(),
           const Spacer(),
-          CustomElevatedButton(label: 'Track Order', onPressed: () {}),
+          CustomElevatedButton(label: ' Chat with Driver', onPressed: () {}),
           SizedBox(height: mediumSpacing),
         ],
       ),
