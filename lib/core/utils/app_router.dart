@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:makanges_app/features/checkout/presentation/view/my_cart_view.dart';
 import 'package:makanges_app/features/delivery/presentation/view/delivery_info_view.dart';
 import 'package:makanges_app/features/general_order_info/presentation/view/general_order_view.dart';
+import 'package:makanges_app/features/google_maps/presentation/google_map_view.dart';
 import 'package:makanges_app/features/home/presentation/view/home_view.dart';
 import 'package:makanges_app/features/order_in_details/presentation/view/order_in_details_view.dart';
 import 'package:makanges_app/features/splash/presentation/view/splash_view.dart';
@@ -13,6 +14,7 @@ abstract class AppRouters {
   static const String orderInDetailsViewRoute = '/orderInDetailsViewRoute';
   static const String myCartViewRoute = '/myCartViewRoute';
   static const String deliveryInfoViewRoute = '/deliveryInfoView';
+  static const String mapViewRoute = '/mapViewRoute';
   static GoRouter router = GoRouter(
     routes: [
       GoRoute(
@@ -39,6 +41,10 @@ abstract class AppRouters {
         path: deliveryInfoViewRoute,
         builder: (context, state) => const DeliveryInfoView(),
       ),
+      GoRoute(
+        path: mapViewRoute,
+        builder: (context, state) => const GoogleMapView(),
+      )
     ],
   );
 }

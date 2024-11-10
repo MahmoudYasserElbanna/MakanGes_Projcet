@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ShareLocation extends StatelessWidget {
-  const ShareLocation({
+class ShowLocation extends StatelessWidget {
+  const ShowLocation({
     super.key,
   });
 

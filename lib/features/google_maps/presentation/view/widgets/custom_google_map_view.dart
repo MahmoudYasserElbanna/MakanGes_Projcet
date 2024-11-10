@@ -4,6 +4,9 @@ import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/assets.dart';
 import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 import 'package:makanges_app/features/google_maps/presentation/data/models/branches_location_model.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/back_arrow_icon.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/delivery_icon.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/show_your_location_icon.dart';
 
 class CustomGoogleMapView extends StatefulWidget {
   const CustomGoogleMapView({super.key});
@@ -20,7 +23,7 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
   @override
   void initState() {
     super.initState();
-    _initializeMarkers();
+    initializeMarkers();
   }
 
   Future<void> setMapStyle(String? stylePath) async {
@@ -32,7 +35,7 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
     }
   }
 
-  void _initializeMarkers() {
+  void initializeMarkers() {
     markers = branchesLocation.map((branch) {
       return Marker(
         markerId: MarkerId(branch.id.toString()),
@@ -41,6 +44,30 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
         infoWindow: InfoWindow(title: branch.name),
       );
     }).toSet();
+  }
+
+  void showMapStyleOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          buildMapStyleOption('Lite Map', null),
+          buildMapStyleOption('Retro Map', Assets.retroMapStylePath),
+          buildMapStyleOption('Night Map', Assets.nightMapStylePath),
+        ],
+      ),
+    );
+  }
+
+  ListTile buildMapStyleOption(String title, String? stylePath) {
+    return ListTile(
+      title: Text(title),
+      onTap: () async {
+        await setMapStyle(stylePath);
+        Navigator.pop(context);
+      },
+    );
   }
 
   @override
@@ -66,41 +93,17 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
           },
         ),
         Positioned(
-          bottom: 26,
-          left: 12,
+          bottom: MediaQuery.of(context).size.height * 0.03,
+          left: MediaQuery.of(context).size.width * 0.03,
           child: CustomIconButton(
             icon: Icons.layers_outlined,
-            onPressed: () {
-              _showMapStyleMenu(context);
-            },
+            onPressed: showMapStyleOptions,
           ),
         ),
+        const ShowLocation(),
+        const BackArrowIcon(),
+        const DeliveryIcon()
       ],
-    );
-  }
-
-  void _showMapStyleMenu(BuildContext context) {
-    showMenu(
-      context: context,
-      position: RelativeRect.fromLTRB(
-        0,
-        MediaQuery.of(context).size.height - 200,
-        MediaQuery.of(context).size.width,
-        0,
-      ),
-      items: [
-        buildPopupMenuItem('Normal', null),
-        buildPopupMenuItem('Retro', Assets.retroMapStylePath),
-        buildPopupMenuItem('Night Mode', Assets.nightMapStylePath),
-      ],
-    );
-  }
-
-  PopupMenuItem<String> buildPopupMenuItem(String title, String? stylePath) {
-    return PopupMenuItem<String>(
-      value: title,
-      child: Text(title),
-      onTap: () => setMapStyle(stylePath),
     );
   }
 }
