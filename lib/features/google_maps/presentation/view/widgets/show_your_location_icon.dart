@@ -1,11 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ShowLocation extends StatelessWidget {
-  const ShowLocation({
+class ShowLocationIcon extends StatelessWidget {
+  const ShowLocationIcon({
     super.key,
   });
+
+  Future<Position> getCurrentLocation() async {
+    bool servicesLocation = await Geolocator.isLocationServiceEnabled();
+    if (!servicesLocation) {
+      return Future.error('Location Services are Disabled.');
+    }
+
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location Permissions are Denied.');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error('Location Permissions are Denied.');
+    }
+    return Geolocator.getCurrentPosition();
+  }
 
   @override
   Widget build(BuildContext context) {

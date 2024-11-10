@@ -26,15 +26,6 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
     initializeMarkers();
   }
 
-  Future<void> setMapStyle(String? stylePath) async {
-    if (stylePath != null) {
-      final style = await DefaultAssetBundle.of(context).loadString(stylePath);
-      googleMapController.setMapStyle(style);
-    } else {
-      googleMapController.setMapStyle(null); // Default style
-    }
-  }
-
   void initializeMarkers() {
     markers = branchesLocation.map((branch) {
       return Marker(
@@ -44,6 +35,15 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
         infoWindow: InfoWindow(title: branch.name),
       );
     }).toSet();
+  }
+
+  Future<void> setMapStyle(String? stylePath) async {
+    if (stylePath != null) {
+      final style = await DefaultAssetBundle.of(context).loadString(stylePath);
+      googleMapController.setMapStyle(style);
+    } else {
+      googleMapController.setMapStyle(null); // Default style
+    }
   }
 
   void showMapStyleOptions() {
@@ -100,7 +100,7 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
             onPressed: showMapStyleOptions,
           ),
         ),
-        const ShowLocation(),
+        const ShowLocationIcon(),
         const BackArrowIcon(),
         const DeliveryIcon()
       ],
