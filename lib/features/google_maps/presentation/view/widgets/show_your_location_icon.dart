@@ -4,10 +4,11 @@ import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ShowLocationIcon extends StatelessWidget {
-  const ShowLocationIcon({
+  ShowLocationIcon({
     super.key,
   });
-
+  late String? lat;
+  late String? lng;
   Future<Position> getCurrentLocation() async {
     bool servicesLocation = await Geolocator.isLocationServiceEnabled();
     if (!servicesLocation) {
@@ -36,10 +37,14 @@ class ShowLocationIcon extends StatelessWidget {
       child: CustomIconButton(
         icon: Icons.location_searching_rounded,
         onPressed: () {
-          Share.share(
-            'I\'m sharing my live order delivery location with you!',
-            subject: 'Location',
-          );
+          getCurrentLocation().then((value) {
+            lat = '{$value.latitude}';
+            lng = '{$value.longitude}';
+          });
+          // Share.share(
+          //   'I\'m sharing my live order delivery location with you!',
+          //   subject: 'Location',
+          // );
         },
       ),
     );
