@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:makanges_app/constants.dart';
 import 'package:makanges_app/core/utils/assets.dart';
+import 'package:makanges_app/core/widgets/custom_icon_button.dart';
 import 'package:makanges_app/features/google_maps/presentation/data/models/branches_location_model.dart';
 
 class CustomGoogleMapView extends StatefulWidget {
@@ -12,41 +13,34 @@ class CustomGoogleMapView extends StatefulWidget {
 }
 
 class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
-  late CameraPosition initialCameraPosition;
-  late LatLng initialPosition =
-      const LatLng(30.246315510129456, 31.210137648452616);
   late GoogleMapController googleMapController;
+  final LatLng initialPosition = const LatLng(30.2463, 31.2101);
   Set<Marker> markers = {};
 
   @override
   void initState() {
-    initialCameraPosition = CameraPosition(
-      target: initialPosition,
-      zoom: cityZoomView,
-    );
-    initBranchesLocations();
     super.initState();
+    _initializeMarkers();
   }
 
-  initMapStyle() async {
-    var nightMapStyle = await DefaultAssetBundle.of(context)
-        .loadString(Assets.nightMapStylePath);
-    googleMapController.setMapStyle(nightMapStyle);
+  Future<void> setMapStyle(String? stylePath) async {
+    if (stylePath != null) {
+      final style = await DefaultAssetBundle.of(context).loadString(stylePath);
+      googleMapController.setMapStyle(style);
+    } else {
+      googleMapController.setMapStyle(null); // Default style
+    }
   }
 
-  initBranchesLocations() {
-    var branchesMarkers = branchesLocation
-        .map(
-          (branch) => Marker(
-            markerId: MarkerId(branch.id.toString()),
-            position: branch.latLng,
-            icon: BitmapDescriptor.defaultMarker,
-            infoWindow: InfoWindow(title: branch.name),
-          ),
-        )
-        .toSet();
-    markers.addAll(branchesMarkers);
-    setState(() {});
+  void _initializeMarkers() {
+    markers = branchesLocation.map((branch) {
+      return Marker(
+        markerId: MarkerId(branch.id.toString()),
+        position: branch.latLng,
+        icon: BitmapDescriptor.defaultMarker,
+        infoWindow: InfoWindow(title: branch.name),
+      );
+    }).toSet();
   }
 
   @override
@@ -57,14 +51,56 @@ class _CustomGoogleMapViewState extends State<CustomGoogleMapView> {
 
   @override
   Widget build(BuildContext context) {
-    return GoogleMap(
-      initialCameraPosition: initialCameraPosition,
-      zoomControlsEnabled: false,
-      markers: markers,
-      onMapCreated: (controller) {
-        googleMapController = controller;
-        initMapStyle();
-      },
+    return Stack(
+      children: [
+        GoogleMap(
+          initialCameraPosition: CameraPosition(
+            target: initialPosition,
+            zoom: cityZoomView,
+          ),
+          zoomControlsEnabled: false,
+          markers: markers,
+          onMapCreated: (controller) {
+            googleMapController = controller;
+            setMapStyle(Assets.nightMapStylePath); // Default style on init
+          },
+        ),
+        Positioned(
+          bottom: 26,
+          left: 12,
+          child: CustomIconButton(
+            icon: Icons.layers_outlined,
+            onPressed: () {
+              _showMapStyleMenu(context);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _showMapStyleMenu(BuildContext context) {
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(
+        0,
+        MediaQuery.of(context).size.height - 200,
+        MediaQuery.of(context).size.width,
+        0,
+      ),
+      items: [
+        buildPopupMenuItem('Normal', null),
+        buildPopupMenuItem('Retro', Assets.retroMapStylePath),
+        buildPopupMenuItem('Night Mode', Assets.nightMapStylePath),
+      ],
+    );
+  }
+
+  PopupMenuItem<String> buildPopupMenuItem(String title, String? stylePath) {
+    return PopupMenuItem<String>(
+      value: title,
+      child: Text(title),
+      onTap: () => setMapStyle(stylePath),
     );
   }
 }

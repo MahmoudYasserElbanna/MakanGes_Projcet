@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:makanges_app/features/delivery/presentation/view/widgets/back_arrow_icon.dart';
-import 'package:makanges_app/features/delivery/presentation/view/widgets/delivery_icon.dart';
-import 'package:makanges_app/features/delivery/presentation/view/widgets/share_location.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/back_arrow_icon.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/delivery_icon.dart';
+import 'package:makanges_app/features/google_maps/presentation/view/widgets/share_location.dart';
 import 'package:makanges_app/features/google_maps/presentation/google_map_view.dart';
 
 class DeliveryInfoViewBody extends StatelessWidget {
